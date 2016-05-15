@@ -109,7 +109,7 @@ func showVersion() {
 func memoryRelease(interval int) {
 	ticker := time.NewTicker(time.Duration(interval) * time.Second)
 	go func() {
-		for _ = range ticker.C {
+		for range ticker.C {
 			// debug("FreeOSMemory()")
 			d.FreeOSMemory()
 		}
